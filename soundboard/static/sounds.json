@@ -1,0 +1,17 @@
+{
+    "sounds": {
+        "tada": {
+            "name": "Tada!!",
+            "file": "tada_loud.mp3",
+            "description": "TADA!!!",
+            "emoji": "🎉"
+        },
+        "goose": {
+            "name": "Goose",
+            "file": "goose.mp3",
+            "description": "Honk honk",
+            "emoji": "🦢"
+        }
+    },
+    "base": "/static/"
+}

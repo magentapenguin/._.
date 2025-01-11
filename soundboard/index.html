@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard</title>
+    <link rel="stylesheet" href="/static/soundboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/433c98b60c.js" crossorigin="anonymous"></script>
+    <script>
+        // Load Twemoji
+        document.addEventListener('DOMContentLoaded', () => {
+            twemoji.parse(document.body);
+        });
+    </script>
+</head>
+<body>
+    <h1>Soundboard</h1>
+    <div id="soundboard">
+        <div id="soundboard-loader">
+            <i class="fa-solid fa-spinner-third fa-spin"></i>
+            <p>Loading soundboard...</p>
+        </div>
+        <!-- Soundboard buttons will be added here -->
+    </div>
+    <script src="/static/soundboard.js"></script>
+</body>
+</html>
