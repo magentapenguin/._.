@@ -2,13 +2,13 @@
     "sounds": {
         "tada": {
             "name": "Tada!!",
-            "file": "tada_loud.mp3",
+            "file": "tada2.wav",
             "description": "TADA!!!",
             "emoji": "🎉"
         },
         "goose": {
             "name": "Goose",
-            "file": "goose.mp3",
+            "file": "goose.wav",
             "description": "Honk honk",
             "emoji": "🦢"
         }

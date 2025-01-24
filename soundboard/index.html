@@ -5,14 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soundboard</title>
     <link rel="stylesheet" href="/static/soundboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/433c98b60c.js" crossorigin="anonymous"></script>
-    <script>
-        // Load Twemoji
-        document.addEventListener('DOMContentLoaded', () => {
-            twemoji.parse(document.body);
-        });
-    </script>
 </head>
 <body>
     <h1>Soundboard</h1>
@@ -23,6 +16,6 @@
         </div>
         <!-- Soundboard buttons will be added here -->
     </div>
-    <script src="/static/soundboard.js"></script>
+    <script src="/static/soundboard.ts" type="module"></script>
 </body>
 </html>
