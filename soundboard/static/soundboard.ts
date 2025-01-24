@@ -4,7 +4,7 @@ function error(message: string): void {
     console.error(message);
 }
 (async () => {
-    const response = await fetch('/static/sounds.json')
+    const response = await fetch('static/sounds.json')
     const soundinfo = await response.json() as { base: string, sounds: Record<string, SoundData> };
     const sounds = soundinfo.sounds;
     if (!soundinfo.base) {
