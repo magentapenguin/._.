@@ -1,26 +1,7 @@
+@import '/static/style.css';
 body {
-    --color: black;
-    --bg: #eee;
-    --secondary-color: #878787;
-    --tertiary-color: #999;
     --true-highlight: #00ff37;
     --highlight: color-mix(in lab, var(--true-highlight) 80%, var(--tertiary-color) 20%);
-    background-color: var(--bg);
-    font-family: 'Roboto', sans-serif;
-    margin: 0.8em;
-    padding: 0;
-    color: var(--color);
-    color-scheme: light dark;
-    height: 100%;
-}
-@media (prefers-color-scheme: dark) {
-    body {
-        --color: white;
-        --bg: #222;
-        --secondary-color: #333;
-        --tertiary-color: #555;
-        color-scheme: dark light;
-    }    
 }
 #soundboard {
     display: grid;

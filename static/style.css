@@ -1,0 +1,93 @@
+body {
+    --color: black;
+    --bg: #eee;
+    --secondary-color: #878787;
+    --tertiary-color: #999;
+    --link: #00b7ff;
+    --link-hover: #009bd8;
+    background-color: var(--bg);
+    font-family: 'Roboto', sans-serif;
+    margin: 0.8em;
+    padding: 0;
+    color: var(--color);
+    color-scheme: light dark;
+    height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --color: white;
+        --bg: #222;
+        --secondary-color: #333;
+        --tertiary-color: #555;
+        color-scheme: dark light;
+    }    
+}
+a, .link {
+    color: var(--link);
+    text-underline-offset: 0.1em;
+    text-decoration: underline;
+    background-color: transparent;
+    font-size: inherit;
+    display: inline;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    text-align: start;
+}
+
+a:hover, .link:hover {
+    color: var(--link-hover);
+}
+.no-line {
+    text-decoration: none !important;
+}
+.icon-link {
+    display: inline-flex;
+    gap: .3rem;
+    align-items: center;
+}
+.icon-link.hover-effect {
+    transition: gap 0.2s ease;
+}
+.icon-link.hover-effect:hover {
+    gap: .5rem;
+}
+button {
+    background: var(--secondary-color);
+    color: var(--color);
+    border: 2px solid var(--tertiary-color);
+    border-radius: 0.4em;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+}
+#menu {
+    position: absolute;
+    top: 0.1em;
+    right: 0.1em;
+    display: flex;
+    gap: 0.5em;
+    overflow: hidden;
+    background-color: #0005;
+    padding: 0.3em;
+    font-size: 1.2em;
+    border-radius: 0.5em;
+    align-items: stretch;
+}
+#menu a, .link {
+    color: var(--color);
+    transition: color 0.2s, width 0.2s;
+    overflow: hidden;
+    width: 1.25em;
+    height: 1em;
+    white-space: nowrap;
+}
+#menu.expanded {
+    flex-direction: column-reverse;
+}
+#menu.expanded a, #menu.expanded .link {
+    width: auto;
+}
+#menu.expanded a:hover, #menu.expanded .link:hover {
+    color: var(--link-hover);
+}
