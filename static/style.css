@@ -1,10 +1,10 @@
 body {
     --color: black;
-    --bg: #eee;
-    --secondary-color: #878787;
-    --tertiary-color: #999;
-    --link: #00b7ff;
-    --link-hover: #009bd8;
+    --bg: #eceff1;
+    --secondary-color: #a8b6c7;
+    --tertiary-color: #979bad;
+    --link: #006992;
+    --link-hover: #005f85;
     background-color: var(--bg);
     font-family: 'Roboto', sans-serif;
     margin: 0.8em;
@@ -18,8 +18,10 @@ body {
     body {
         --color: white;
         --bg: #0f1522;
-        --secondary-color: #333;
-        --tertiary-color: #555;
+        --secondary-color: #2c313a;
+        --tertiary-color: #424a58;
+        --link: #00b7ff;
+        --link-hover: #009bd8;
     }    
 }
 a, .link {
@@ -61,20 +63,21 @@ button {
     cursor: pointer;
 }
 #menu {
-    position: absolute;
-    top: 0.1em;
-    right: 0.1em;
+    position: fixed;
+    top: 0.2rem;
+    right: 0.2rem;
     display: flex;
     gap: 0.5em;
     overflow: hidden;
-    background-color: #0005;
+    background-color: #000000cc;
+    color: white;
     padding: 0.3em;
     font-size: 1.2em;
     border-radius: 0.5em;
     align-items: stretch;
 }
 #menu a, .link {
-    color: var(--color);
+    color: white;
     transition: color 0.2s, width 0.2s;
     overflow: hidden;
     width: 1.25em;
@@ -87,6 +90,25 @@ button {
 #menu.expanded a, #menu.expanded .link {
     width: auto;
 }
-#menu.expanded a:hover, #menu.expanded .link:hover {
-    color: var(--link-hover);
+#menu a:hover, #menu .link:hover {
+    color: #aaa !important;
+}
+details {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    margin-top: 0;
+}
+details[open] {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.5em;
+    user-select: none;
+}
+details summary > * {
+    display: inline;
 }
