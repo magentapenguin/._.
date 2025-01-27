@@ -13,5 +13,5 @@
             "emoji": "🦢"
         }
     },
-    "base": "/._./sounds/"
+    "base": "/._./public/sounds/"
 }
