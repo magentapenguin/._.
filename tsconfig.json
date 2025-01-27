@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "allowArbitraryExtensions": true,
+    "lib": ["esnext","dom"]
+  },
+}
