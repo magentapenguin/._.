@@ -10,7 +10,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         soundboard: resolve(__dirname, 'soundboard/index.html'),
+        podcast: resolve(__dirname, 'podcast.html'),
       },
     },
   },
+  base: './'
 })

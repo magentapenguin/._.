@@ -17,10 +17,9 @@ body {
 @media (prefers-color-scheme: dark) {
     body {
         --color: white;
-        --bg: #222;
+        --bg: #0f1522;
         --secondary-color: #333;
         --tertiary-color: #555;
-        color-scheme: dark light;
     }    
 }
 a, .link {
