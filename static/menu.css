@@ -13,7 +13,7 @@
     border-radius: 0.5em;
     align-items: stretch;
 }
-#menu a, .link {
+#menu a, #menu .link {
     color: white;
     transition: color 0.2s, width 0.2s;
     overflow: hidden;
