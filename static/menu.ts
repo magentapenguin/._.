@@ -116,4 +116,4 @@ links.forEach(link => {
 });
 menu.appendChild(toggle);
 document.body.appendChild(menu);
-new Tooltip(toggle, 'Toggle menu');
+new Tooltip(toggle, 'Toggle menu', { strategy: 'fixed' });

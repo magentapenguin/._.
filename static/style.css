@@ -64,7 +64,7 @@ button {
 }
 details {
     margin: 0.5em 0;
-    padding: 0.5em;
+    padding: 1em;
     margin-top: 0;
     border: 1px solid var(--tertiary-color);
     border-radius: 0.5em;
@@ -72,11 +72,18 @@ details {
 details[open] {
     margin-top: 0;
 }
+details[open] summary {
+    margin: 0 calc(-1em + 2px);
+    padding: 0 calc(1em - 2px);
+    margin-bottom: 1em;
+    padding-bottom: calc(1em - 3px);
+    border-bottom: 1px solid var(--tertiary-color);
+}
 details summary {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.2em;
-    padding: 0.5em;
+    padding: 0;
     user-select: none;
 }
 details summary > * {
@@ -84,4 +91,12 @@ details summary > * {
 }
 details > *:last-child {
     margin-bottom: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0.5em 0;
 }
