@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.6.13",
     "@twemoji/api": "^15.1.0",
     "@types/twemoji": "^13.1.1"
   }
