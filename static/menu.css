@@ -39,5 +39,6 @@
     top: 0;
     z-index: 100;
     background-color: #00000088;
+    color: white;
     backdrop-filter: blur(0.2em);
 }
