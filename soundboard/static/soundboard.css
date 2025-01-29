@@ -1,6 +1,5 @@
 @import '/static/style.css';
 body {
-    --true-highlight: #00ff37;
     --highlight: color-mix(in lab, var(--true-highlight) 80%, var(--tertiary-color) 20%);
 }
 #soundboard {

@@ -1,12 +1,12 @@
 import twemoji from '@twemoji/api';
-import soundinfo from './sounds.json';
+import soundData from './sounds.json';
 function error(message: string): void {
     alert(message);
     console.error(message);
 }
-//const soundinfo = { base: string, sounds: Record<string, SoundData> };
-const sounds = soundinfo.sounds;
-if (!soundinfo.base) {
+
+const sounds = soundData.sounds;
+if (!soundData.base) {
     error('No base URL for sounds found.');
 }
 const soundboard = document.getElementById('soundboard')
@@ -45,6 +45,6 @@ const addSound = (name: string, url: string, id: string): void => {
     twemoji.parse(button);
 };
 for (const [name, data] of Object.entries(sounds)) {
-    addSound(data.emoji + ' ' + data.name, soundinfo.base + data.file, name)
+    addSound(data.emoji + ' ' + data.name, soundData.base + data.file, name)
 }
 if (soundboard) soundboard.classList.add('loaded')

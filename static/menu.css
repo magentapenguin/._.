@@ -5,7 +5,7 @@
     display: flex;
     gap: 0.5em;
     overflow: hidden;
-    background-color: #00000088;
+    background-color: #000000aa;
     backdrop-filter: blur(0.2em);
     color: white;
     padding: 0.3em;
@@ -29,16 +29,4 @@
 }
 #menu a:hover, #menu .link:hover {
     color: #aaa !important;
-}
-.tooltip {
-    padding: 0.5em;
-    border-radius: 0.5em;
-    user-select: none;
-    pointer-events: none;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    background-color: #00000088;
-    color: white;
-    backdrop-filter: blur(0.2em);
 }
