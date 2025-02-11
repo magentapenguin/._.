@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Sounds</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/433c98b60c.js" crossorigin="anonymous"></script>
+    <script type="module" src="/static/menu.ts" async></script>
+</head>
+<body>
+    <h1>Dynamic Sounds</h1>
+    <div class="options">
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" min="0" max="100" value="50">
+        <input type="number" min="0" max="100" value="50" data-range-sync="volume" data-range-sync-limits="true">
+        <label for="freq">Frequency</label>
+        <input type="range" id="freq" min="200" max="8000" value="440">
+        <input type="number" min="200" max="8000" value="50" data-range-sync="freq" data-range-sync-limits="true">
+        <label for="wave-type">Wave Type</label>
+        <select name="wave-type" id="wave-type">
+            <option value="sine">Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+        </select>
+        <button id="play-btn">
+            <i class="fa-solid fa-volume"></i>
+            <span>Play</span>
+        </button>
+        <button id="stop-btn">
+            <i class="fa-solid fa-volume-xmark"></i>
+            <span>Stop</span>
+        </button>
+    </div>
+    <div id="disabled-limits" hidden>
+        <strong><i class="fa-solid fa-exclamation-triangle"></i> Warning:</strong> Limits are disabled
+    </div>
+    <script src="main.ts" type="module"></script>
+    <script type="module" src="/static/range-sync.ts" async></script>
+</body>
+</html>

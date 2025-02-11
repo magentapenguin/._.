@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         soundboard: resolve(__dirname, 'soundboard/index.html'),
         podcast: resolve(__dirname, 'podcast.html'),
+        dynamicSounds: resolve(__dirname, 'dynamicsounds/index.html'),
       },
     },
   },

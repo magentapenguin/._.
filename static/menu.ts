@@ -19,6 +19,11 @@ const links = [
         href: 'podcast',
         label: 'Podcast',
         icon: 'fa-solid fa-microphone'
+    },
+    {
+        href: 'dynamicsounds/',
+        label: 'Dynamic Sounds',
+        icon: 'fa-solid fa-music-note'
     }
 ];
 const toggle = document.createElement('button');

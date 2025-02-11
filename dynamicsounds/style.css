@@ -1,0 +1,51 @@
+@import '/static/style.css';
+#disabled-limits {
+    position: fixed;
+    bottom: 0.2rem;
+    left: 0.2rem;
+}
+#disabled-limits strong {
+    color: #fa0;
+}
+.options {
+    display: grid;
+    grid-template-areas: "label1 range1 input1"
+                         "label2 range2 input2"
+                         "label3 input3 input3"
+                         "play play stop";
+    grid-template-columns: max-content 2fr 1fr;
+    gap: 0.5em;
+    align-items: center;
+    width: 100%;
+    max-width: 40rem;
+}
+.options label[for="volume"] {
+    grid-area: label1;
+}
+.options #volume {
+    grid-area: range1;
+}
+.options [data-range-sync="volume"] {
+    grid-area: input1;
+}
+.options label[for="freq"] {
+    grid-area: label2;
+}
+.options #freq {
+    grid-area: range2;
+}
+.options [data-range-sync="freq"] {
+    grid-area: input2;
+}
+.options label[for="wave-type"] {
+    grid-area: label3;
+}
+.options #wave-type {
+    grid-area: input3;
+}
+.options #play-btn {
+    grid-area: play;
+}
+.options #stop-btn {
+    grid-area: stop;
+}

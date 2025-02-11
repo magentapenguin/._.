@@ -3,19 +3,27 @@ import bottle, requests, bs4, urllib.parse
 app = bottle.Bottle()
 
 
-@app.route("/p/<url:re:.*>", method="ANY")
+def requests_response_to_bottle_response(response: requests.Response, fl=False) -> bottle.HTTPResponse:
+    bottle_response = bottle.HTTPResponse()
+    bottle_response.status = response.status_code
+    bottle_response.body = response.text
+    return bottle_response
+
+@app.route("/p/<url>", method="ANY")
 def proxy(url):
     protocol = bottle.request.headers.get("X-Forwarded-Proto", "http")
-    if bottle.request.
-    return requests.request(
+    # Fix links if the request is a GET and the response is HTML
+    response = requests.request(
         method=bottle.request.method,
-        url=protocol + "://" + url,
-        headers=dict(bottle.request.headers.items()),
-        data=bottle.request.body,
-        cookies=bottle.request.cookies,
+        url="https://" + url,
         allow_redirects=False,
         timeout=10,
     )
+    r = requests_response_to_bottle_response(response)
+    if bottle.request.method == "GET" and "text/html" in r.content_type:
+        print(r.body)
+        r.body = fix_links(r.body)
+    return r
 
 
 def fix_links(html):
@@ -67,3 +75,6 @@ def fix_link(href):
             + ("#" + href.fragment if href.fragment else "")
         )
     return urllib.parse.urlunsplit(href)
+
+if __name__ == "__main__":
+    bottle.run(app, host="localhost", port=8080, debug=True)
