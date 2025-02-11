@@ -44,7 +44,7 @@ a, .link {
     color: var(--link);
     text-underline-offset: 0.1em;
     text-decoration: underline;
-    background-color: transparent;
+    background: none;
     font-size: inherit;
     display: inline;
     border: none;
@@ -55,6 +55,7 @@ a, .link {
 
 a:hover, .link:hover {
     color: var(--link-hover);
+    background: none;
 }
 .no-line {
     text-decoration: none !important;
