@@ -9,6 +9,12 @@ body {
     --link: #006992;
     --link-hover: #005f85;
     --selection: #138ebe5b;
+    --warning: #fa0;
+    --dark-warning: #730;
+    --error: #f32;
+    --dark-error: #700;
+    --success: #0a0;
+    --dark-success: #070;
     background-color: var(--bg);
     font-family: 'Roboto', sans-serif;
     margin: 0.8em;
@@ -140,4 +146,11 @@ input, select, textarea, option {
 input[type="range"] {
     padding-left: 0;
     padding-right: 0;
+}
+:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+:disabled:hover {
+    filter: sepia(1) hue-rotate(-70deg) contrast(1.5);
 }

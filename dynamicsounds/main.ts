@@ -5,7 +5,7 @@ const freqElem = document.getElementById('freq') as HTMLInputElement;
 freqElem.addEventListener('input', () => {
   oscillator.frequency.value = parseFloat(freqElem.value);
 });
-const waveTypeElem = document.getElementById('wave') as HTMLSelectElement;
+const waveTypeElem = document.getElementById('wave-type') as HTMLSelectElement;
 waveTypeElem.addEventListener('input', () => {
   oscillator.type = waveTypeElem.value as OscillatorType;
 });
@@ -13,21 +13,32 @@ waveTypeElem.addEventListener('input', () => {
 const vol = ctx.createGain();
 const volElem = document.getElementById('volume') as HTMLInputElement;
 volElem.addEventListener('input', () => {
-  vol.gain.value = parseFloat(volElem.value);
+  vol.gain.value = parseFloat(volElem.value) / 100;
 });
 oscillator.connect(vol);
 vol.connect(ctx.destination);
+const playBtn = document.getElementById('play-btn') as HTMLButtonElement;
+const stopBtn = document.getElementById('stop-btn') as HTMLButtonElement;
 
-document.getElementById('play-btn').addEventListener('click', () => {
+
+playBtn.addEventListener('click', () => {
+    ctx.resume();
     oscillator = ctx.createOscillator();
     oscillator.connect(vol);
     oscillator.frequency.value = parseFloat(freqElem.value);
     oscillator.type = waveTypeElem.value as OscillatorType;
-    oscillator.start();    
+    oscillator.start();
+    playBtn.disabled = true;
+    stopBtn.disabled = false;
+    playBtn.blur();
+    playBtn.querySelector('span').innerText = 'Playing...';
 });
-document.getElementById('stop-btn').addEventListener('click', () => {
+stopBtn.addEventListener('click', () => {
     oscillator.stop();
     oscillator.disconnect();
+    playBtn.disabled = false;
+    stopBtn.disabled = true;
+    playBtn.querySelector('span').innerText = 'Play';
 });
 
 var nolimits = false;
