@@ -1,3 +1,4 @@
+import '/static/obfuscated.js';
 const ctx = new AudioContext();
 let oscillator = ctx.createOscillator();
 oscillator.connect(ctx.destination);

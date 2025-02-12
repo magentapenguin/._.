@@ -3,8 +3,8 @@
 body {
     --color: black;
     --bg: #eceff1;
-    --secondary-color: #a8b6c7;
-    --tertiary-color: #979bad;
+    --secondary-color: #e1e9f3;
+    --tertiary-color: #cfd2e2;
     --true-highlight: #00ff37;
     --link: #006992;
     --link-hover: #005f85;
@@ -148,9 +148,10 @@ input[type="range"] {
     padding-right: 0;
 }
 :disabled {
-    opacity: 0.5;
+    filter: brightness(0.8);
     cursor: not-allowed;
 }
+
 :disabled:hover {
-    filter: sepia(1) hue-rotate(-70deg) contrast(1.5);
+    filter: sepia(1) hue-rotate(-70deg) brightness(0.8) contrast(1.5);
 }
