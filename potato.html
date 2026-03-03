@@ -426,14 +426,22 @@
 
                 const gridX = Math.floor(rayX);
                 const gridY = Math.floor(rayY);
-                try {
-                    if (level[gridY][gridX] && !ignore.includes(level[gridY][gridX])) {
-                        return [distance, level[gridY][gridX]];
-                    }
-                } catch (e) {
-                    return [maxDistance, null]; // Out of bounds, treat as max distance
+
+                // Explicit bounds checking instead of try/catch for performance
+                if (
+                    gridY < 0 ||
+                    gridY >= level.length ||
+                    gridX < 0 ||
+                    gridX >= level[gridY].length
+                ) {
+                    // Out of bounds, treat as max distance
+                    return [maxDistance, null];
                 }
 
+                const cell = level[gridY][gridX];
+                if (cell && !ignore.includes(cell)) {
+                    return [distance, cell];
+                }
                 distance += stepSize;
             }
 
