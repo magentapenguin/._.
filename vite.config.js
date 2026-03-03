@@ -9,6 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        potato: resolve(__dirname, 'potato.html'),
         soundboard: resolve(__dirname, 'soundboard/index.html'),
         podcast: resolve(__dirname, 'podcast.html'),
         dynamicSounds: resolve(__dirname, 'dynamicsounds/index.html'),
